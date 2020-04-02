@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const StyledHeader = styled.h1`
   ${({ theme }) => `
-    font-size: 2rem;
+    font-size: 2em;
     text-align: left;
     padding: ${theme['padding-small']} ${theme['padding-small']};
   `}
@@ -13,7 +13,7 @@ const StyledHeader = styled.h1`
 
 const Index = () => {
   return (
-    <MainLayout>
+    <MainLayout title="dev-tips">
       <StyledHeader>The Index Page</StyledHeader>
     </MainLayout>
   );
