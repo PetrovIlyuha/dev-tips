@@ -1,9 +1,10 @@
 import { Component, ReactNode } from 'react';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../utils/theme';
 import { GlobalStyle } from '../../utils/globalStyle';
 import Head from 'next/head';
 import { Layout } from 'antd';
+import { MainFooter } from './MainFooter';
 
 const { Header, Content } = Layout;
 
@@ -80,6 +81,12 @@ type Props = {
   title?: string;
 };
 
+const StyledBody = styled.div`
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+`;
+
 export class MainLayout extends Component<Props> {
   render() {
     const { children, title } = this.props;
@@ -87,9 +94,12 @@ export class MainLayout extends Component<Props> {
       <ThemeProvider theme={theme}>
         <MainHead title={title} />
         <GlobalStyle />
-        <Layout>
-          <Content>{children}</Content>
-        </Layout>
+        <StyledBody>
+          <Layout>
+            <Content>{children}</Content>
+            <MainFooter />
+          </Layout>
+        </StyledBody>
       </ThemeProvider>
     );
   }
