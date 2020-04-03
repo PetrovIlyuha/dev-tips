@@ -5,6 +5,7 @@ import { GlobalStyle } from '../../utils/globalStyle';
 import Head from 'next/head';
 import { Layout } from 'antd';
 import { MainFooter } from './MainFooter';
+import { MainNavbar } from './MainNavbar';
 
 const { Header, Content } = Layout;
 
@@ -96,6 +97,7 @@ export class MainLayout extends Component<Props> {
         <GlobalStyle />
         <StyledBody>
           <Layout>
+            <MainNavbar />
             <Content>{children}</Content>
             <MainFooter />
           </Layout>
