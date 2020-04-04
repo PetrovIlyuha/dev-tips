@@ -1,5 +1,6 @@
 import React from 'react';
 import { MainLayout } from '../components/layout/MainLayout';
+import getConfig from 'next/config';
 
 import styled from 'styled-components';
 
