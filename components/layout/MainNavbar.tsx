@@ -21,7 +21,7 @@ const StyledMenu = styled(Menu)`
   border-bottom-width: 0px;
   width: 50%;
   font-weight: bold;
-  @media (max-width: 890px) {
+  @media (max-width: 768px) {
     width: 100%;
   }
   a {
@@ -36,7 +36,7 @@ const TitleContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    @media (max-width: 890px) {
+    @media (max-width: 768px) {
       visibility: hidden;
       width: 0;
     }
