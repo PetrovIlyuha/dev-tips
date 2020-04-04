@@ -1,7 +1,6 @@
 import React from 'react';
 import { MainLayout } from '../components/layout/MainLayout';
-import getConfig from 'next/config';
-
+import { SnippetsList, queryEnum } from '../components/SnippetsList';
 import styled from 'styled-components';
 
 const StyledHeader = styled.h1`
@@ -16,6 +15,7 @@ const Index = () => {
   return (
     <MainLayout title="dev-tips">
       <StyledHeader>The Index Page</StyledHeader>
+      <SnippetsList parentRoute="snippet" queryType={queryEnum.snippets} />
     </MainLayout>
   );
 };
