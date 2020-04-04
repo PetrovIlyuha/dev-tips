@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 export const snippetGraphQL = gql`
-  query snippetGraphQL($where: snippetWhereUniqueInput!) {
+  query snippetGraphQL($where: SnippetWhereUniqueInput!) {
     snippet(where: $where) {
       id
       status
