@@ -4,6 +4,7 @@ import { Row } from 'antd';
 import { snippetsGraphQL } from '../graphql/queries/snippets';
 import { userLikesGraphQL } from '../graphql/queries/userLikes';
 import { Snippet } from '../generated/apollo-components';
+import { Error } from './messages/Error';
 
 export enum queryEnum {
   userLikes = 'userLikes',
@@ -31,7 +32,8 @@ export const SnippetsList = ({
 
   if (loading) return <p>Loading...</p>;
 
-  if (error || !snippetsList) return <p>Error</p>;
+  if (error || !snippetsList) return <Error errorText={`${error}`} />;
+
   if (snippetsList.length === 0) return <p>There Are No Snippets</p>;
   return (
     <Row>
