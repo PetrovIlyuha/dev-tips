@@ -1,24 +1,27 @@
-import Link from 'next/link';
-import { Layout, Menu } from 'antd';
-import styled from 'styled-components';
+import Link from "next/link";
+import { Layout, Menu } from "antd";
+import styled from "styled-components";
 const { Header } = Layout;
 
 const StyledHeader = styled(Header)`
   ${({ theme }) => `
-    background-color: ${theme['header-color']};
-    border-bottom-color: ${theme['header-border-color']};
+    background-color: ${theme["header-color"]};
+    border-bottom-color: ${theme["header-border-color"]};
     border-bottom-width: 1px;   
     border-bottom-style: solid;
     text-align: right;
     display: flex;
     li {
-      font-size: ${theme['font-size-md']}
+      font-size: ${theme["font-size-md"]}
     }
   `}
 `;
 
 const StyledMenu = styled(Menu)`
   border-bottom-width: 0px;
+  background-color: #f2fffb;
+  background-image: linear-gradient(90deg, #f2fffb 0%, #d4c3d0 100%);
+
   width: 50%;
   font-weight: bold;
   @media (max-width: 768px) {
@@ -31,7 +34,7 @@ const StyledMenu = styled(Menu)`
 
 const TitleContainer = styled.div`
   ${({ theme }) => `
-    background-color: ${theme['header-color']};
+    background-color: ${theme["header-color"]};
     width: 50%;
     display: flex;
     flex-direction: row;
@@ -54,7 +57,7 @@ const Title = styled.div`
     div {
       width: 100%;
       margin-top: 10px;
-      padding-left: ${theme['padding-small']}
+      padding-left: ${theme["padding-small"]}
     }
     h2 {
       display: inline;
@@ -78,7 +81,7 @@ export const MainNavbar = () => (
         </div>
       </Title>
     </TitleContainer>
-    <StyledMenu theme="light" mode="horizontal" style={{ lineHeight: '64px' }}>
+    <StyledMenu theme="light" mode="horizontal" style={{ lineHeight: "64px" }}>
       <Menu.Item key="/">
         <Link href="/">
           <a>Home</a>
