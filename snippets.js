@@ -37,11 +37,11 @@ const snippets = [
     recommendations: [
       {
         key: 0,
-        content: "Select element using querySelector",
+        content: "1.Select element using querySelector",
       },
       {
         key: 1,
-        content: "use toggle API on the classList to handle it",
+        content: "2.use toggle API on the classList to handle it",
       },
     ],
     content:
