@@ -39,6 +39,7 @@ const TitleContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    cursor: pointer;
     @media (max-width: 768px) {
       visibility: hidden;
       width: 0;
@@ -73,13 +74,15 @@ const Title = styled.div`
 export const MainNavbar = () => (
   <StyledHeader>
     <TitleContainer>
-      <Title>
-        <img src="/logo.svg" alt="Logo" />
-        <div>
-          <h2>DevTips</h2>
-          <p>Handy cookbook for you projects</p>
-        </div>
-      </Title>
+      <Link href="/">
+        <Title>
+          <img src="/logo.svg" alt="Logo" />
+          <div>
+            <h2>DevTips</h2>
+            <p>Handy cookbook for you projects</p>
+          </div>
+        </Title>
+      </Link>
     </TitleContainer>
     <StyledMenu theme="light" mode="horizontal" style={{ lineHeight: "64px" }}>
       <Menu.Item key="/">
