@@ -1,11 +1,11 @@
-import { Component, ReactNode } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import { theme } from '../../utils/theme';
-import { GlobalStyle } from '../../utils/globalStyle';
-import Head from 'next/head';
-import { Layout } from 'antd';
-import { MainFooter } from './MainFooter';
-import { MainNavbar } from './MainNavbar';
+import { Component, ReactNode } from "react";
+import styled, { ThemeProvider } from "styled-components";
+import { theme } from "../../utils/theme";
+import { GlobalStyle } from "../../utils/globalStyle";
+import Head from "next/head";
+import { Layout } from "antd";
+import { MainFooter } from "./MainFooter";
+import { MainNavbar } from "./MainNavbar";
 
 const { Header, Content } = Layout;
 
