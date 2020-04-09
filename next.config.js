@@ -9,13 +9,13 @@ const {
   CDNBASE,
   GRAPHCMSID,
   GRAPHCMSURL,
-  auth0domain,
-  auth0clientId,
-  auth0clientSecret,
-  auth0scope,
-  auth0redirectUri,
-  auth0postLogoutRedirectUri,
-  auth0cookieSecret,
+  domain,
+  clientId,
+  clientSecret,
+  scope,
+  redirectUri,
+  postLogoutRedirectUri,
+  cookieSecret,
 } = process.env;
 
 module.exports = withCSS({
@@ -32,13 +32,13 @@ module.exports = withCSS({
   },
   serverRuntimeConfig: {
     auth: {
-      auth0domain,
-      auth0clientId,
-      auth0clientSecret,
-      auth0scope,
-      auth0redirectUri,
-      auth0postLogoutRedirectUri,
+      domain,
+      clientId,
+      clientSecret,
+      scope,
+      redirectUri,
+      postLogoutRedirectUri,
     },
-    cookieSecret: auth0cookieSecret,
+    cookieSecret: cookieSecret,
   },
 });
