@@ -4,6 +4,7 @@ import EllipsisText from "react-ellipsis-text";
 import { Col } from "antd";
 import Link from "next/link";
 import styled from "styled-components";
+import { LikeButton } from "./LikeButton";
 
 const StyledSnippet = styled(Col)`
   ${({ theme }) => `
@@ -35,7 +36,7 @@ const StyledSnippet = styled(Col)`
         }
       }    
       h3 {
-        margin: 10px auto;
+        marginTop: 10px;
         padding: 10px ${theme["padding-small"]};
         line-height: 1.2rem;
         
@@ -66,7 +67,10 @@ export const SnippetListItem = ({
         <Link href={`${parentRoute}/${id}`}>
           <div>{images ? <GraphImg image={images} /> : null}</div>
         </Link>
-        <h3>{title}</h3>
+        <h3>
+          {title}
+          <LikeButton userLikes={userLikes} snippetId={id} />
+        </h3>
         <p>
           <EllipsisText text={description} length={100} />
         </p>
