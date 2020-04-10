@@ -100,6 +100,11 @@ export const MainNavbar = () => {
         </Menu.Item>
         {user && !loading ? (
           [
+            <Menu.Item key="/favourites">
+              <Link href="/favourites">
+                <a>Favorites</a>
+              </Link>
+            </Menu.Item>,
             <Menu.Item key="/my-snippets">
               <Link href="/my-snippets">
                 <a>My Snippets</a>
