@@ -5,6 +5,8 @@ import { Row, Col, List } from "antd";
 import styled from "styled-components";
 import _ from "lodash";
 
+import { LikeButton } from "./LikeButton";
+
 const StyledOneSnippet = styled(Col)`
   ${({ theme }) => `
     margin-top: ${theme["margin-small"]};
@@ -47,7 +49,6 @@ const StyledOneSnippet = styled(Col)`
 
 const OneSnippet = ({ snippet }: { snippet: Snippet }) => {
   const recommendations = _.get(snippet, "recommendations");
-  console.log(recommendations);
   return (
     <Row>
       <StyledOneSnippet
@@ -65,7 +66,14 @@ const OneSnippet = ({ snippet }: { snippet: Snippet }) => {
         </Row>
         <Row>
           <Col span={20} offset={2}>
-            <h1>{snippet.title}</h1>
+            <h1>
+              {snippet.title}
+              <LikeButton
+                userLikes={snippet.userLikes}
+                snippetId={snippet.id}
+              />
+            </h1>
+
             <p>{snippet.description}</p>
           </Col>
         </Row>
