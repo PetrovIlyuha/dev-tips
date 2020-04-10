@@ -99,9 +99,14 @@ export const MainNavbar = () => {
           </Link>
         </Menu.Item>
         {user && !loading ? (
-          <Menu.Item key="/api/logout">
-            <Link href="/api/logout">Logout</Link>
-          </Menu.Item>
+          [
+            <Menu.Item key="/my-snippets">
+              <Link href="/my-snippets">My Snippets</Link>
+            </Menu.Item>,
+            <Menu.Item key="/api/logout">
+              <Link href="/api/logout">Logout</Link>
+            </Menu.Item>,
+          ]
         ) : (
           <Menu.Item key="/api/login">
             <Link href="/api/login">Log In</Link>
