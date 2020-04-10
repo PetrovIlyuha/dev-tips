@@ -63,7 +63,6 @@ export const LikeButton = ({
   return (
     <StyledSpan
       onClick={() => {
-        console.log("liked");
         if (!hasUserLiked) {
           createUserLikeMutation({
             refetchQueries: [
