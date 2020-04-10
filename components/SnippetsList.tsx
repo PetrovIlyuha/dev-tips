@@ -31,12 +31,9 @@ export const SnippetsList = ({
     queryType === queryEnum.snippets ? snippetsGraphQL : userLikesGraphQL;
   const { loading, data, error } = useQuery(query, options);
   const parentArray = _.get(data, queryType);
-  const snippetsList = _.map(parentArray, (value) =>
+  const snippetsList = _.map(parentArray, value =>
     _.get(value, "snippet", value),
   );
-
-  console.log(loading, data, error);
-
   if (loading) return <Loading />;
 
   if (error || !snippetsList) return <Error errorText={`${error}`} />;
