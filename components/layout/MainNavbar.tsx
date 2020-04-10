@@ -101,15 +101,21 @@ export const MainNavbar = () => {
         {user && !loading ? (
           [
             <Menu.Item key="/my-snippets">
-              <Link href="/my-snippets">My Snippets</Link>
+              <Link href="/my-snippets">
+                <a>My Snippets</a>
+              </Link>
             </Menu.Item>,
             <Menu.Item key="/api/logout">
-              <Link href="/api/logout">Logout</Link>
+              <Link href="/api/logout">
+                <a>Logout</a>
+              </Link>
             </Menu.Item>,
           ]
         ) : (
           <Menu.Item key="/api/login">
-            <Link href="/api/login">Log In</Link>
+            <Link href="/api/login">
+              <a>Log In</a>
+            </Link>
           </Menu.Item>
         )}
       </StyledMenu>
