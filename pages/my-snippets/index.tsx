@@ -4,6 +4,7 @@ import _ from "lodash";
 import { Row, Col } from "antd";
 import { SnippetsList, queryEnum } from "../../components/SnippetsList";
 import { useFetchUser } from "../../utils/user";
+import { Loading } from "../../components/messages/Loading";
 
 const StyledRow = styled(Row)`
   ${({ theme }) => `
@@ -21,7 +22,9 @@ const Index = () => {
   const { user, loading: isFetchUser } = useFetchUser();
   const author = _.get(user, "sub");
   const options = author ? { variables: { where: { author } } } : {};
-  console.log(options, user);
+
+  if (isFetchUser) return <Loading />;
+
   return (
     <MainLayout title="My Snippets">
       <StyledRow>
