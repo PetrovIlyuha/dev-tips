@@ -15,6 +15,9 @@ const StyledRow = styled(Row)`
       padding-left: ${theme["padding-small"]};
       text-align: left;
     }    
+    .createBtn {
+      margin: 5px 0 20px 20px;
+    }
   `}
 `;
 
@@ -30,7 +33,7 @@ const Index = () => {
       <StyledRow>
         <Col span={24}>
           <Link href="/create">
-            <div style={{ margin: "5px 0 20px 20px" }}>
+            <div className="createBtn">
               <Button type="primary">Create</Button>
             </div>
           </Link>
