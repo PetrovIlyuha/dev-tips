@@ -1,13 +1,14 @@
 import { Form, Row, Col, Button } from "antd";
 import { submitForm } from "../utils/submitForm";
-import { GenerateInput } from "./GenerateFields";
+import { GenerateInput, GenerateTextInput } from "./GenerateFields";
 
 export const CreateSnippet = () => {
   const initiateCreateSnippet = () => {
     console.log("submitted form");
+    console.log(values);
   };
   const { values, handleInputChange, handleSubmit } = submitForm(
-    { title: "" },
+    { title: "", description: "", content: "" },
     initiateCreateSnippet,
   );
   return (
@@ -15,6 +16,16 @@ export const CreateSnippet = () => {
       <GenerateInput
         name="title"
         value={values.title}
+        handleInputChange={handleInputChange}
+      />
+      <GenerateInput
+        name="description"
+        value={values.description}
+        handleInputChange={handleInputChange}
+      />
+      <GenerateTextInput
+        name="content"
+        value={values.content}
         handleInputChange={handleInputChange}
       />
       <Row>
