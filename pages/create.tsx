@@ -5,7 +5,6 @@ import { CreateSnippet } from "../components/CreateSnippet";
 const StyledHeader = styled.h1`
   ${({ theme }) => `
     padding: ${theme["padding-small"]};
-
   `}
 `;
 const Create = () => {
