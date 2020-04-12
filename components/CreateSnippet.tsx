@@ -5,6 +5,7 @@ import {
   GenerateTextInput,
   GenerateDropdown,
 } from "./GenerateFields";
+import { GenerateRecommendations } from "./GenerateRecommendations";
 
 export const CreateSnippet = () => {
   const initiateCreateSnippet = () => {
@@ -14,10 +15,18 @@ export const CreateSnippet = () => {
   const {
     values,
     handleInputChange,
+    handleAddRecommendation,
+    handleDeleteRecommendation,
     handleDropdownChange,
     handleSubmit,
   } = submitForm(
-    { title: "", description: "", content: "", status: "DRAFT" },
+    {
+      title: "",
+      description: "",
+      content: "",
+      status: "DRAFT",
+      recommendations: [],
+    },
     initiateCreateSnippet,
   );
   return (
@@ -36,6 +45,13 @@ export const CreateSnippet = () => {
         name="content"
         value={values.content}
         handleInputChange={handleInputChange}
+      />
+      <GenerateRecommendations
+        content={values.recommendations}
+        handleAddRecommendation={handleAddRecommendation}
+        handleDeleteRecommendation={handleDeleteRecommendation}
+        handleInputChange={handleInputChange}
+        handleDropdownChange={handleDropdownChange}
       />
       <Row>
         <GenerateDropdown
