@@ -1,9 +1,10 @@
-import { Row, Col, Input, Form } from "antd";
-
+import { Row, Col, Input, Form, Dropdown, Button } from "antd";
+import MenuList from "./MenuList";
 type InputType = {
   name: string;
   value: string;
   handleInputChange?: (event: any) => void;
+  handleDropdownChange?: (event: any) => void;
 };
 
 export const GenerateInput = ({
@@ -42,4 +43,29 @@ export const GenerateTextInput = ({
       </Form.Item>
     </Col>
   </Row>
+);
+
+const status = ["DRAFT", "PUBLISHED", "ARCHIVED"];
+
+export const GenerateDropdown = ({
+  name,
+  value,
+  handleDropdownChange,
+}: InputType) => (
+  <Col span={4} offset={6}>
+    <Form.Item label={`${name}`}>
+      <Dropdown
+        overlay={
+          <MenuList
+            iterableList={status}
+            name={name}
+            handleDropdownChange={handleDropdownChange}
+          />
+        }
+        placement="bottomLeft"
+      >
+        <Button>{value}</Button>
+      </Dropdown>
+    </Form.Item>
+  </Col>
 );
