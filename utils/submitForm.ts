@@ -28,9 +28,32 @@ export const submitForm = (initialValues, callback) => {
     });
   };
 
+  const handleAddRecommendation = event => {
+    event.persist();
+    setValues(inputs => {
+      const sortedRecommendations = _.sortBy(values.recommendations, ["key"]);
+      const key =
+        sortedRecommendations.length > 0
+          ? parseInt(
+              sortedRecommendations[sortedRecommendations.length - 1].key + 1,
+            )
+          : 0;
+      return {
+        ...inputs,
+        recommendations: _.concat(inputs.recommendations, [
+          { key, content: "" },
+        ]),
+      };
+    });
+  };
+
+  const handleDeleteRecommendation = event => {};
+
   return {
     values,
     handleInputChange,
+    handleAddRecommendation,
+    handleDeleteRecommendation,
     handleDropdownChange,
     handleSubmit,
   };
