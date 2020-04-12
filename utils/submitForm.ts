@@ -6,6 +6,7 @@ export const submitForm = (initialValues, callback) => {
 
   const handleSubmit = event => {
     if (event) event.preventDefault();
+
     callback();
     setValues(() => ({ ...initialValues }));
   };
@@ -19,9 +20,18 @@ export const submitForm = (initialValues, callback) => {
     });
   };
 
+  const handleDropdownChange = event => {
+    setValues(prevInputs => {
+      const newInputs = _.cloneDeep(prevInputs);
+      _.set(newInputs, event.item.props.title, event.key);
+      return newInputs;
+    });
+  };
+
   return {
     values,
     handleInputChange,
+    handleDropdownChange,
     handleSubmit,
   };
 };
